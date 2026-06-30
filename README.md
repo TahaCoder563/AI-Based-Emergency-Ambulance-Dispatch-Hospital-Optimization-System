@@ -2,10 +2,6 @@
 
 An intelligent emergency response system that uses **A\* Search** to route ambulances optimally through a city road network and **Constraint Satisfaction Problem (CSP)** solving to assign the best available hospital — all visualized in a real-time Streamlit dashboard.
 
-> Built for CS 2005 – Artificial Intelligence
-
----
-
 ## Features
 
 ### Emergency Dispatch
@@ -101,44 +97,3 @@ An intelligent emergency response system that uses **A\* Search** to route ambul
 
 ---
 
-## Usage
-
-1. **Emergency Dispatch tab** — Select an emergency location node and severity, optionally enable ICU requirement, then hit **DISPATCH AMBULANCE**. The system will show the selected ambulance, A\* path, chosen hospital, and all CSP solving steps.
-
-2. **Hospital Management tab** — View real-time occupancy for all hospitals and update bed/doctor/ICU availability.
-
-3. **System Administration tab** — Randomize or manually adjust traffic conditions on roads and see the updated city map.
-
----
-
-## How the AI Works
-
-```
-Emergency Call Received
-        │
-        ▼
- A* Search runs from each
- available ambulance to the
- emergency location
-        │
-        ▼
- Nearest ambulance selected
- (lowest f(n) = g(n) + h(n))
-        │
-        ▼
- CSP applies 4 constraints
- to reduce hospital domain
-        │
-        ▼
- MRV heuristic orders remaining
- candidates, backtracking picks
- the closest valid hospital
-        │
-        ▼
- A* finds route from emergency
- to assigned hospital
-        │
-        ▼
- Total cost reported + all
- steps visualized
-```
